@@ -119,7 +119,7 @@ The reply function is actually decoding the cipher. If the length of the message
 The last part of the program is just for connecting to `netcat`, and sending and receiving messages.
 <br />
 
-As you run the script, you'll see a 31 character string form on your terminal over 45-60 seconds. That is the final flag. Here's a sample:
+As you run the script, you'll see a 31 character string form on your terminal over 45-60 seconds (varies based on how lucky you are). That is the final flag. Here's a sample:
 
 ```
 $ python flag.py
