@@ -1,4 +1,4 @@
-# Boredom
+# Rotten
 
 Author: [roerohan](https://github.com/roerohan)
 
