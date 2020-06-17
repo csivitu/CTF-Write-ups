@@ -13,14 +13,14 @@
   <p align="center">
     Write-ups for CTF Challenges.
     <br />
-    <a href="https://github.com/github_username/repo"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/csivitu/CTF-Write-ups"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo">View Demo</a>
+    <a href="https://github.com/csivitu/CTF-Write-ups">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo/issues">Report Bug</a>
+    <a href="https://github.com/csivitu/CTF-Write-ups/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo/issues">Request Feature</a>
+    <a href="https://github.com/csivitu/CTF-Write-ups/issues">Request Feature</a>
   </p>
 </p>
 
