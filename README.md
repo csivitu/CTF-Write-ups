@@ -1,6 +1,35 @@
-# CTF-Write-ups
+[![csivit][csivitu-shield]][csivitu-url]
+[![Issues][issues-shield]][issues-url]
 
-Write-ups for CTF challenges.
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/github_username/repo">
+    <img src="https://csivit.com/images/favicon.png" alt="Logo" width="80">
+  </a>
+
+  <h3 align="center">CTF Write-ups</h3>
+
+  <p align="center">
+    Write-ups for CTF Challenges.
+    <br />
+    <a href="https://github.com/github_username/repo"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/github_username/repo">View Demo</a>
+    ·
+    <a href="https://github.com/github_username/repo/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/github_username/repo/issues">Request Feature</a>
+  </p>
+</p>
+
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [Format](#format)
+* [License](#license)
+* [Contributors](#contributors-)
 
 # Format
 
@@ -37,3 +66,13 @@ Brief Description
 
 Detailed Exploit with images (if any).
 ```
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+# Contributors
+
+- [roerohan](https://github.com/roerohan)
+- [thebongy](https://github.com/thebongy)
