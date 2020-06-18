@@ -25,7 +25,7 @@
 </p>
 
 <!-- TABLE OF CONTENTS -->
-## Table of Contents
+# Table of Contents
 
 * [Format](#format)
 * [License](#license)
