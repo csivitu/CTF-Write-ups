@@ -29,7 +29,7 @@
 
 * [Format](#format)
 * [License](#license)
-* [Contributors](#contributors-)
+* [Contributors](#contributors)
 
 # Format
 
