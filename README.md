@@ -28,15 +28,15 @@
 </p>
 
 <!-- TABLE OF CONTENTS -->
-# Table of Contents
+## Table of Contents
 
 * [Format](#format)
 * [License](#license)
 * [Contributors](#contributors)
 
-# Format
+## Format
 
-## Directory Structure
+### Directory Structure
 
 ```
 - CTF Name
@@ -48,7 +48,7 @@
      - README.md (solution)
 ```
 
-## Challenge Solution
+### Challenge Solution
 
 ```
 # Challenge Name
@@ -71,15 +71,9 @@ Detailed Exploit with images (if any).
 ```
 
 <!-- LICENSE -->
-# License
+## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-# Contributors
-
-- [roerohan](https://github.com/roerohan)
-- [thebongy](https://github.com/thebongy)
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
