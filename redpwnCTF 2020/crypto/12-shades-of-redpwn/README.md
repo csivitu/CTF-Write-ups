@@ -35,5 +35,5 @@ Maybe we read some colors wrong? Replace the `^`s with `_`s.
 The flag is:
 
 ```
-flag{9u3ss1n9_1s^4n^4rt}
+flag{9u3ss1n9_1s_4n_4rt}
 ```
