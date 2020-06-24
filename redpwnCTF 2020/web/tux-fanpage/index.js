@@ -73,5 +73,3 @@ function strip(dir){
 app.listen(3000, () => {
     console.log('listening on 0.0.0.0:3000')
 })
-
-// https://tux-fanpage.2020.redpwnc.tf/page?path[]=a&path[]=/../../index.js
