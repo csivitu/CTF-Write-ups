@@ -31,7 +31,7 @@ int main(void)
   setbuf(stdin, NULL);
   setbuf(stderr, NULL);
 
-  puts("Welcome to coffer overflow, where our coffers are overfilling with bytes ;)";
+  puts("Welcome to coffer overflow, where our coffers are overfilling with bytes ;)");
   puts("What do you want to fill your coffer with?");
 
   gets(name);
