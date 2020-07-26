@@ -1,4 +1,4 @@
-# Serial
+# Hunt
 
 Author: [roerohan](https://github.com/roerohan)
 
