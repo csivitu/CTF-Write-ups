@@ -80,3 +80,8 @@ x = r.recvline().decode()
 print(x)
 ```
 
+The flag is:
+
+```
+FwordCTF{R4nd0m_isnT_R4nd0m_4ft3r_4LL_!_Everyhthing_is_predict4bl3_1f_y0u_kn0w_wh4t_Y0u_d01nGGGG}
+```
