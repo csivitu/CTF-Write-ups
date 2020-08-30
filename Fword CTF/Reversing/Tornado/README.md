@@ -101,6 +101,12 @@ for i in possible_seeds:
 	print(reverse_shuffle(chars, i))
 ```
 
+Run the script with python.
+
+```bash
+$ python solve-tornado.py | grep Fword
+```
+
 The flag is:
 
 ```
