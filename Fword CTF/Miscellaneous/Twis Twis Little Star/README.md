@@ -1,6 +1,6 @@
 # Secret Array
 
-Author: [roerohan](https://github.com/roerohan) and [namsnath](https://github.com/namsnath)
+Author: [roerohan](https://github.com/roerohan)
 
 # Requirements
 
