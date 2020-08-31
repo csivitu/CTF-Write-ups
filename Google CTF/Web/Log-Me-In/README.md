@@ -1,7 +1,6 @@
-# 
+# Log Me In
 
 Author: [roerohan](https://github.com/roerohan)
-
 
 
 # Requirements
@@ -215,7 +214,7 @@ var query = connection.query('INSERT INTO posts SET ?', post, function (error, r
 console.log(query.sql); // INSERT INTO posts SET `id` = 1, `title` = 'Hello MySQL'
 ```
 
-So we can see that objects are converted into comma separated attributes. We know the username is supposed to be `michelle`, but we do not know the password. So, we can try to pass an object in the place of password, with a known attribute. So, here's the payload I tried:
+We can see that objects are converted into comma separated attributes. We know the username is supposed to be `michelle`, but we do not know the password. So, we can try to pass an object in the place of password, with a known attribute. So, here's the payload I tried:
 
 ```
 csrf&username=michelle&password[username]=michelle
@@ -234,6 +233,15 @@ Now, the query becomes something like:
 ```js
 con.query('Select * from users where username = ? and password = ?', ['michelle', {username: 'michelle'}], function(err, qResult) {...});
 ```
+
+This actually evaluates to:
+
+```js
+"Select * from users where username = 'michelle' and password = `username` = 'michelle';"
+```
+Now, this works because of the way `mysql` evaluates strings. When you evaluate `'password' = 'username'`, it returns a 0. Now, when you compare `0` and `'michelle'`, `true` is returned. This happens because of the way type-casting is done in `mysql`. 
+
+This would work for any string which does not get type-casted to a different number. For example, `0 = '1michelle'` will evaluate to false, and not allow you to log in successfully. Check out [this](https://stackoverflow.com/questions/22080382/mysql-why-comparing-a-string-to-0-gives-true) link for a more detailed explanation.
 
 This will bypass the password check and give you back the required user! Here's the final paylaod.
 
