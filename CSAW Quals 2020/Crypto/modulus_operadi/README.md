@@ -1,4 +1,4 @@
-# Perfect Secrecy
+# modulus_operandi
 
 Author: [roerohan](https://github.com/roerohan) and [thebongy](https://github.com/thebongy)
 
