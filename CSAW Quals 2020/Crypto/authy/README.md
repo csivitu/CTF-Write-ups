@@ -2,8 +2,6 @@
 
 Author: [roerohan](https://github.com/roerohan) and [thebongy](https://github.com/thebongy)
 
-This is another `file` challenge.
-
 # Requirements
 
 - Python
