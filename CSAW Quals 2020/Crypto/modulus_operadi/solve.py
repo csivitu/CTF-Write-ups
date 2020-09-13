@@ -1,27 +1,3 @@
-# Perfect Secrecy
-
-Author: [roerohan](https://github.com/roerohan) and [thebongy](https://github.com/thebongy)
-
-# Requirements
-
-- Python
-
-# Source
-
-```
-Can't play CSAW without your favorite block cipher!
-
-nc crypto.chal.csaw.io 5001
-```
-
-# Exploitation
-
-The exploit is based on the fact that the ciphertext generated using ECB will have repeating blocks because of the way it works, while CBC will not have such blocks.
-<br />
-
-The following script can be used to get the flag.
-
-```py
 from pwn import remote
 
 l = []
@@ -83,12 +59,3 @@ solve()
 '''
 [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1]
 '''
-```
-
-In this list, ECB is 0 and CBC is 1. You can then group these into 8 and treat them as binary to get the flag.
-
-```py
->>> ''.join([chr(int(''.join(map(str, l[0+i:8+i])), 2)) for i in range(0, len(l
-), 8)])
-'flag{ECB_re@lly_sUck$}'
-```
