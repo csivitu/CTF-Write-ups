@@ -1,4 +1,4 @@
-# authy
+# Perfect Secrecy
 
 Author: [roerohan](https://github.com/roerohan) and [thebongy](https://github.com/thebongy)
 
