@@ -51,7 +51,7 @@ So you can see which variable stores what. Now, the script executes the command 
 There is of course a blacklist, part of which have written in [blacklist.py](./blacklist.py). We notice `numpy` has been imported. `numpy` has a function `numpy.load()`, which can take load a pickle payload from a file, given the option `allow_pickle=True`. We know that we can execute RCE using pickle payloads, which is exactly what we have to do.
 <br />
 
-The challenge however is to create a `file like object` for `numpy.load()`, since you don't have access to write a file on the system. Reading the documentation for `numpy.load()` you find out that a `file like object` is any object which has the attributes `read`, `readline`, and `seek`. You don't need to implement these properly, but they must return the expected type of data. Here's how you can do all of this in 1 line, keeping the blacklist in consideration.
+The challenge however is to create a `file like object` for `numpy.load()`, since you don't have access to write a file on the system. Reading the documentation for `numpy.load()` you find out that a `file like object` is any object which has the attributes `read`, `readline`, and `seek`. You don't need to implement these properly, but they must return the expected type of data. We pass the pickle payload as bytes in the `lambda x` function. Here's how you can do all of this in 1 line, keeping the blacklist in consideration.
 
 
 ```py
