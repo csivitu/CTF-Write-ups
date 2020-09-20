@@ -28,3 +28,9 @@ for i in text.lower():
         print(chr((ord(i) - offset - ord('a')) % 26 + ord('a')), end = '')
     offset += 1
 ```
+
+The flag is:
+
+```
+DUCTF{crypto_is_fun_kjqlptzy}
+```

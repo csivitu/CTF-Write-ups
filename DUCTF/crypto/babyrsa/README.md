@@ -42,3 +42,9 @@ m = hex(m)[2:]
 
 print(bytes.fromhex(m))
 ```
+
+The flag is:
+
+```
+DUCTF{e4sy_RSA_ch4ll_t0_g3t_st4rt3d}
+```
