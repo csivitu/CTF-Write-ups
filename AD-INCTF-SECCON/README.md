@@ -1,4 +1,4 @@
-# AD-INCTF-SECCOND
+# AD-INCTF-SECCON
 
 ## Organizers
 - team bi0s
