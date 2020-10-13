@@ -6,6 +6,6 @@
 
 Rank - 2
 
-- Official URL: http://ad.inctf.inctf
+- Official URL: http://ad.inctf.in
 - Format: Attack Defense
 - Duration: Sun, 12 Oct. 2020, 09:00 IST — Sun, 12 Oct. 2020, 21:00 IST
