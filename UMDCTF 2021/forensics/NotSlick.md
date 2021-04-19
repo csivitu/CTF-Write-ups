@@ -1,5 +1,6 @@
 # Not Slick - Forensics
 Author - [BlackJack](http://github.com/Mannan-Goyal)
+
 Requirements : Basic knowledge of Hex, the structure of png files and the magic number
 
 ---
