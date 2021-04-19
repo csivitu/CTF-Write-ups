@@ -1,5 +1,6 @@
 # Pickle Rick - Stegnography
 Author - [BlackJack](http://github.com/Mannan-Goyal)
+
 Requirements : binwalk, steghide or not
 
 ---
