@@ -119,7 +119,7 @@ Press Enter to get the arr
 
 as you can see the entire array does not get read.
 
-to overcome this, i use a loop to take packets of data and merge them into one string and use eval to convert into a list.
+to overcome this, i use a loop to take packets of data and merge them into one string and use eval to convert into a list. This method was suggested by [UnknownAbyss](https://github.com/UnknownAbyss).
 
 ```python
 finalData=""
