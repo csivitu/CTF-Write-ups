@@ -1,4 +1,4 @@
-# Curly Fries 3 - Web
+# Curly Fries 1 - Web
 
 Author - [UnknownAbyss](https://github.com/UnknownAbyss)
 
