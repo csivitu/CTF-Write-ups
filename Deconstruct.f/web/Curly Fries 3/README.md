@@ -1,4 +1,4 @@
-# Curly Fries 3 - OSINT
+# Curly Fries 3 - Web
 
 Author - [BlackJack](http://github.com/Mannan-Goyal)
 
